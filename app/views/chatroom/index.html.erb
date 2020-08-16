@@ -1,1 +1,59 @@
-<h1>Welcome to the chatroom page</h1>
+<h2 class="ui center aligned icon header">
+  <i class="blue circular smile icon"></i>
+  Say something
+</h2>
+
+<div class="ui two column grid">
+    <div class="twelve wide column">
+        <div class="ui blue fluid raised card chatbox">
+            <div class="content">
+                <div class="ui feed">
+                        <% @messages.each do |message| %>
+                        <div class="event">
+                            <div class="content">
+                                <div class="summary">
+                                <em><%= message.user.username %></em> : <%= message.body %>
+                                </div>
+                            </div>
+                        </div> 
+                    <%end%>
+                </div>
+            </div>
+            <div class= "extra content">
+                <form class="ui reply form">
+                    <div class="field">
+                        <div class="ui fluid icon input">
+                        <input type="text" placeholder="Search...">
+                            <i class="bordered inverted blue edit icon"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+    <div class="four wide column">
+        <div class="ui blue fluid raised card chatbox">
+            <div class="content">
+                <div class="ui blue inverted vertical menu">
+                    <a class="active item">
+                        Home
+                    </a>
+                    <a class="item">
+                        Messages
+                    </a>
+                    <div class="ui dropdown item">
+                        <i class="dropdown icon"></i>
+                            Freinds
+                        <div class="menu">
+                        <div class="header">Text Size</div>
+                            <a class="item">Small</a>
+                            <a class="item">Medium</a>
+                            <a class="item">Large</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+</div>
